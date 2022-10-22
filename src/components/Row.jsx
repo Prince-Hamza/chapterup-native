@@ -1,23 +1,28 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, Dimensions } from 'react-native'
 
-export default function Row({ children, wf }) {
+export default function Row({ style, children, wf, lg, xs }) {
     return (
-        <View style={{ ...Styles.flex, borderWidth: wf ? 1 : 0 }} >
+        <View style={{
+            ...Styles.flex,
+            ...style,
+            borderWidth: wf ? 1 : 0,
+            width: (Dimensions.get('screen').width / 12) * (lg ? lg : xs ? xs : 12)
+        }}>
             {children}
         </View>
     )
 }
 
 
+
 const Styles = ({
     flex: {
         flex: 0,
-        flexDirection: "row",
+        flexDirection: "column",
         flexWrap: "wrap",
         alignItems: "center",
-        justifyContent: "space-between",
-        borderColor: '#222',
-        width: 40
+        justifyContent: "center",
+        borderColor: 'white',
     }
 })

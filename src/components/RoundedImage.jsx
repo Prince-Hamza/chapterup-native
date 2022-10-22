@@ -1,10 +1,13 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, Image } from 'react-native'
+import ImageWrap from './ImageWrap'
 
-export default function RoundedImage({ width, height, style }) {
+
+export default function RoundedImage({ scale, style, source, resize }) {
     return (
-        <View style={{ width: width, height: height, ...style }}>
-
-        </View>
+        <Image
+            source={source}
+            style={{ width: scale, height: scale, borderRadius: 130 }}
+        />
     )
 }
