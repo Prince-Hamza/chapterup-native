@@ -29,8 +29,14 @@ export default function Login({ navigation }) {
     })
   }
 
-  const signIn = () => {
-    // auth.createUser('email', 'prince@gmail.com', 'pass1234')
+  const signIn = async () => {
+    var res = await auth.EmailLogin(email, password)
+    if (res.error) alert(`err : ${res.error}`)
+    if (res.user) {
+      alert(`sign in successful`)
+      navigation.navigate('Messenger')
+    }
+
   }
 
   const handleClick = () => {
@@ -50,7 +56,7 @@ export default function Login({ navigation }) {
         <TextInput style={Styles.input} placeholder='Email' onChange={(e) => { setEmail(e.nativeEvent.text) }} />
         <Space pixels={25} />
 
-        <TextInput style={Styles.input} placeholder='Password' onChange={(e) => { setPassword(e.nativeEvent.text) }} />
+        <TextInput style={Styles.input} placeholder='Password' secureTextEntry={true} onChange={(e) => { setPassword(e.nativeEvent.text) }} />
         <Space pixels={25} />
 
 

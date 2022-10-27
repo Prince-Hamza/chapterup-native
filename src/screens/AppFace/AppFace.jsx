@@ -7,7 +7,12 @@ import YoutubePlayer from "react-native-youtube-iframe";
 import Space from '../../components/Space'
 import ChapButton from '../../components/ChapButton'
 
-export default function AppFace() {
+export default function AppFace({ navigation }) {
+
+  const handleClick = () => {
+    navigation.navigate('signUp')
+  }
+
   return (
     <ImageWrap style={{ height: 550, ...Content.colCentrify }} source={{ uri: 'https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/129325364/original/afaddcb9d7dfaaf5bff7ef04101935814665ac16/design-an-attractive-background-for-your-website.png' }}>
 
@@ -37,8 +42,10 @@ export default function AppFace() {
       <Text style={Fonts.quote}>
         "I had major life changes that impacted my mental wellbeing. I was struggling to cope and needed the emotional support ChapterUp provided to get me through and plan my future"
       </Text>
+
       <Space pixels={12} />
-      <ChapButton title={'Start Today'} />
+      
+      <ChapButton title={'BOOK FREE DISCUSSION'} onClick={() => { handleClick() }} />
 
     </ImageWrap>
   )

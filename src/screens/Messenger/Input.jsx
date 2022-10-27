@@ -1,5 +1,7 @@
 import React from 'react'
-import { Col, Row, Form } from 'react-bootstrap'
+import Col from '../../components/Col'
+import Row from '../../components/Row'
+import Menu from './Menu'
 import firebase from 'firebase/compat/app'
 import auth from 'firebase/compat/auth'
 import database from 'firebase/compat/database'

@@ -1,8 +1,10 @@
 import React, { useState, useContext, useEffect } from 'react'
-import { Col, Row, Image } from 'react-bootstrap'
+import { Image } from 'react-native'
+import Col from '../../components/Col'
+import Row from '../../components/Row'
 import Menu from './Menu'
-import Intro from './Intro'
-import MessengerIcon from '../../images/chat/messenger.png'
+// import Intro from './Intro'
+import MessengerIcon from '../../assets/chat/messenger.png'
 import ChatHistory from './ChatHistory'
 import PreviousMessages from './PreviousMessages'
 import ChatNow from './ChatNow'
@@ -41,7 +43,7 @@ export default function Messenger({ userInfo1, userInfo2, groupInfo, messengerTy
                             <ChatHistory setMessages={setMessagesInfo} setChatLinkInfo={setChatLinkInfo} />
                         </Col>
                         <Col lg={9} style={Styles.chatColumn} id={'messages'} >
-                            <Intro info={messagesInfo} />
+                            {/* <Intro info={messagesInfo} /> */}
                             <PreviousMessages info={messagesInfo} />
                             {chatLinkInfo.chatKey && <ChatNow info={chatLinkInfo} />}
                             <Input info={userInfo1} linkInfo={chatLinkInfo} />

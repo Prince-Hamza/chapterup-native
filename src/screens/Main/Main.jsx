@@ -128,12 +128,13 @@ export default function Main({ navigation }) {
         <FlexView>
             <Header navigation={navigation} />
             <ScrollView>
-                <AppFace />
-                <Therapy />
+                <AppFace navigation={navigation} />
+                <Therapy navigation={navigation} />
 
                 <Section
                     title={'Join a Group'}
                     listData={info.JoinPage.imageList}
+                    navigation={navigation}
                 />
 
                 <Section
@@ -141,11 +142,13 @@ export default function Main({ navigation }) {
                     title={'How it Works ? '}
                     description={info.HowPage.description}
                     bulletLines={info.HowPage.bulletLines}
+                    navigation={navigation}
                 />
 
                 <Section
                     title={'See what our members have to say'}
                     listData={info.Reviews.imageList}
+                    navigation={navigation}
                 />
 
                 <Section
@@ -153,6 +156,7 @@ export default function Main({ navigation }) {
                     backgroundColor={'#f78da7'}
                     title={'Meet out talented Mental Health & Wellbeing Professionals'}
                     listData={info.Professionals.imageList}
+                    navigation={navigation}
                 />
 
                 <Contact />

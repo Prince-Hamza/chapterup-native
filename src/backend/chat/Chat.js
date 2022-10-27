@@ -20,6 +20,7 @@ export class ChatSystem {
         var chatLinksList = await firebase.database().ref(`/users/${path}/chats`).once('value')
         var linksList = []
         chatLinksList.forEach((item) => { linksList.push(item.val()) })
+        console.log(`link List : ${JSON.stringify(linksList)}`)
         return linksList
     }
 

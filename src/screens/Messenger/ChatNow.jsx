@@ -1,10 +1,13 @@
 import React, { Component, useEffect, useState } from 'react'
-import { Col, Row, Image } from 'react-bootstrap'
+import Col from '../../components/Col'
+import Row from '../../components/Row'
+import Menu from './Menu'
 import { Content } from '../../styles/styles'
 import firebase from 'firebase/compat/app'
 import auth from 'firebase/compat/auth'
 import { ChatSystem } from '../../backend/chat/Chat'
-import $ from 'jquery'
+import { Text } from 'react-native'
+
 
 const chatSystem = new ChatSystem()
 
@@ -23,11 +26,11 @@ export default class ChatNow extends Component {
   }
 
   scrollToBottom = (element) => {
-    var $messages = $('#messages')
-    setTimeout(() => {
-      var l = $messages.text().length
-      $messages.animate({ scrollTop: 100000 }, 3);
-    }, 3)
+    // var $messages = $('#messages')
+    // setTimeout(() => {
+    //   var l = $messages.text().length
+    //   $messages.animate({ scrollTop: 100000 }, 3);
+    // }, 3)
   }
 
   handleMessage = (message) => {
@@ -46,7 +49,7 @@ export default class ChatNow extends Component {
             <Col lg={12} style={Styles.container}>
               <Row lg={12} style={{ width: '100%' }}>
                 <Image roundedCircle style={{ width: '45px', height: '45px', marginRight: '20px', marginLeft: '15px', backgroundColor: 'white' }} src={item.userId === 'administa' ? 'https://play-with-ghost.com/liebling/content/images/2021/01/admin-settings.png' : item.image} />
-                <div style={{ color: 'white', width: '80%', marginTop: '5px' }} > {item.text} </div>
+                <Text style={{ color: 'white', width: '80%', marginTop: '5px' }} > {item.text} </Text>
               </Row>
             </Col>
           )

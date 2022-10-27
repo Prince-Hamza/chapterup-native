@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Row, Image } from 'react-bootstrap'
+import Col from '../../components/Col'
+import Row from '../../components/Row'
+import Menu from './Menu'
 import { Content } from '../../styles/styles'
 import { ChatSystem } from '../../backend/chat/Chat'
+import { Text } from 'react-native'
 const chatSystem = new ChatSystem()
 
 export default function PreviousMessages({ info }) {
@@ -22,7 +25,7 @@ export default function PreviousMessages({ info }) {
                     <Col lg={12} style={Styles.container}>
                         <Row lg={12} style={{ width: '100%' }}>
                             <Image roundedCircle style={{ width: '47px', height: '40px', marginRight: '20px', marginLeft: '15px', backgroundColor: 'white' }} src={item.image} />
-                            <div style={{ color: 'white', width: '80%' , marginTop:'5px' }} > {item.text} </div>
+                            <Text style={{ color: 'white', width: '80%', marginTop: '5px' }} > {item.text} </Text>
                         </Row>
                     </Col>
                 )
@@ -31,7 +34,7 @@ export default function PreviousMessages({ info }) {
 
             {!info.length &&
                 <Col lg={12} style={Styles.container}  >
-                    <div style={Styles.text}> No Mesages to show </div>
+                    <Text style={Styles.text}> No Mesages to show </Text>
                 </Col>
             }
 

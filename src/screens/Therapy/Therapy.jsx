@@ -8,7 +8,9 @@ import ChapButton from '../../components/ChapButton'
 export default function Therapy() {
 
     const screenWide = Dimensions.get('screen').width
-
+    const handleClick = () => {
+        navigation.navigate('signUp')
+    }
 
     return (
         <FlexView>
@@ -54,7 +56,7 @@ export default function Therapy() {
             </Text>
             <Space pixels={15} />
 
-            <ChapButton title={'START TODAY'} style={{ color: 'white' }} />
+            <ChapButton title={'START TODAY'} style={{ color: 'white' }} onClick={() => { handleClick() }} />
             <Space pixels={50} />
 
         </FlexView >

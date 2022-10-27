@@ -7,7 +7,12 @@ import ImageWrap from './ImageWrap'
 import ChapButton from './ChapButton'
 import Space from './Space'
 
-export default function Section({ theme, title, description, bulletLines, listData, backgroundColor, style }) {
+export default function Section({ theme, title, description, bulletLines, listData, backgroundColor, style, navigation }) {
+
+    const handleClick = () => {
+        navigation.navigate('signUp')
+    }
+
     return (
         <ImageWrap
             source={{ uri: theme }}
@@ -50,7 +55,7 @@ export default function Section({ theme, title, description, bulletLines, listDa
                         <Text style={{ ...Fonts.heading, color: theme ? 'white' : '#222' }}>  {item.title}  </Text>
                         <Text style={{ ...Fonts.quote, color: theme ? 'white' : '#222' }}>  {item.description}  </Text>
                         <Space pixels={15} />
-                        <ChapButton title={item.buttonText} />
+                        <ChapButton title={item.buttonText} onClick={() => { handleClick() }} />
                         <Space pixels={50} />
                     </FlexView>
                 )

@@ -22,12 +22,14 @@ export default function MessengerWrap({ }) {
         setInfo({...info})
     }
 
+    
+
     return (
         <MessengerContext.Provider value={{ info: info, setInfo: setInfo }}>
             <Tabs />
             <ScrollView>
-                {page === 'chat' && <Messenger />}
-                {page === 'history' &&
+                {info.page === 'chat' && <Messenger />}
+                {info.page === 'history' &&
                     <ChatHistory
                         setMessages={setMessagesInfo}
                         setChatLinkInfo={setChatLinkInfo}
